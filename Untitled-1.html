@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+background-image: url("https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg");
+background-size: cover;
+font-family: Arial, sans-serif;
+}
+h1 {
+color: white;
+text-align: center;
+animation: blink 1s linear infinite;
+}
+p {
+color: white;
+font-size: 20px;
+text-align: center;
+}
+@keyframes blink {
+0% {opacity: 1;}
+50% {opacity: 0;}
+100% {opacity: 1;}
+}
+span {
+animation: rainbow 2s linear infinite;
+}
+@keyframes rainbow {
+0% {color: red;}
+14% {color: orange;}
+28% {color: yellow;}
+42% {color: green;}
+57% {color: blue;}
+71% {color: indigo;}
+85% {color: violet;}
+100% {color: red;}
+}
+</style>
+<script>
+window.onload = function() {
+var p = document.querySelector("p");
+var lines = p.innerHTML.split("<br>");
+p.innerHTML = "";
+var delay = 0;
+for (var i = 0; i < lines.length; i++) {
+var line = lines[i];
+for (var j = 0; j < line.length; j++) {
+var span = document.createElement("span");
+span.innerHTML = line[j];
+span.style.animationDelay = delay + "s";
+delay += 0.1;
+p.appendChild(span);
+}
+p.appendChild(document.createElement("br"));
+}
+};
+</script>
+</head>
+<body>
+<h1>I Love You!</h1>
+<p>You are the one I think about<br>
+You are the one I wait for<br>
+You are the one I want to be with<br>
+You are the one I want to say:<br>
+I love you so much!<br>
+I have loved you for a long time!<br>
+I will love you forever!<br>
+Will you be my girlfriend/boyfriend?</p>
+</body>
+</html>
